@@ -3,45 +3,23 @@ import touch
 import time
 import device
 
-def change_text(button):
-    display.show(display.Text((f"Button {button} touched!", 0, 0, 0xffffff)))
-    single_button_flag = 1
-
-'''
-def tap_text():
-    display.show(display.Text("Tap a touch button", 0, 0, 0xffffff))
-
-def exit_tap(button):
-    Both_button_text = display.Text(f"Button {button} touched!", 0, 0, 0xffffff)
-    exit = 1
 
 
+display.show(display.Text("Hello World", 200, 200, 0xffffff))
+time.sleep(3)
 
-def update_display():
-    if single_button_flag == 1:
-        display.show(single_text)
-'''
+battery = device.battery_level()
+display.show(display.Text(f"Battery is {battery}%", 0, 0, 0xffffff), display.Text("Tap a button!", 200, 200, 0xffffff))
+print("why")
+timer = 0
+print("ok")
 
-def delay():
-    time.sleep_ms(100)
+def main():
+    while True:
+        print("test")
+        time.sleep_ms(1000)
 
-display.show(display.Text("Tap a touch button", 0, 0, 0xffffff), display.Text(f"Battery is {battery}%", 200, 200, 0xffffff))
+main()
 
-sleep = 0
-exit = 0
-
-while TRUE:
-    battery = device.battery_level()
-    touch.callback(touch.BOTH, exit_tap)
-    touch.callback(touch.A, change_text)
-    touch.callback(touch.B, change_text)
-    print(sleep)
-    delay()
-    if exit == 1:
-        continue
-
-    display.show(display.Text("Program All Done", 0, 0, 0xffffff))
-
-#main()
 
 
